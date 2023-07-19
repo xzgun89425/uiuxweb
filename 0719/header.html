@@ -7,24 +7,68 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="flex justify-between items-center text-white bg-zinc-900 h-16 px-8">
+    <nav class="fixed z-50 w-full top-0 left-0 flex justify-between items-center text-white h-16 px-8">
         <h1>LOGO</h1>
-        <ul class="hidden lg:flex gap-4">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Products</a></li>
+        <ul class="hidden lg:flex gap-6">
+            <li class="hover:bg-gray-500/40 rounded px-2 py-1 duration-200"><a href="#">About Us</a></li>
+            <li class="hover:bg-gray-500/40 rounded px-2 py-1 duration-200"><a href="#">Contact Us</a></li>
+            <li class="hover:bg-gray-500/40 rounded px-2 py-1 duration-200"><a href="#">News</a></li>
+            <li class="hover:bg-gray-500/40 rounded px-2 py-1 duration-200"><a href="#">Products</a></li>
         </ul>
         <label class="relative z-40 w-12 h-12 flex lg:hidden flex-col justify-center items-center gap-1 cursor-pointer overflow-hidden" for="mobile-menu">
             <input class="peer hidden" type="checkbox" id="mobile-menu" />
             <div class="w-7 h-1 bg-zinc-200 rounded-full peer-checked:rotate-45 peer-checked:translate-y-2 duration-200"></div>
             <div class="w-7 h-1 bg-zinc-200 rounded-full peer-checked:translate-x-10 duration-200"></div>
             <div class="w-7 h-1 bg-zinc-200 rounded-full peer-checked:-rotate-45 peer-checked:-translate-y-2 duration-200"></div>
+            <div class="hidden peer-checked:block fixed z-30 top-16 left-0 w-full bg-white/5">
+                <ul class="text-center">
+                    <li class="py-2 hover:bg-amber-600/80 hover:text-white duration-300"><a href="#">About Us</a></li>
+                    <li class="py-2 hover:bg-amber-600/80 hover:text-white duration-300"><a href="#">Contact Us</a></li>
+                    <li class="py-2 hover:bg-amber-600/80 hover:text-white duration-300"><a href="#">News</a></li>
+                    <li class="py-2 hover:bg-amber-600/80 hover:text-white duration-300"><a href="#">Products</a></li>
+                </ul>
+            </div>
         </label>
     </nav>
+    <div class="w-full h-screen bg-[url('/banner.jpeg')] relative">
+        <!-- <img src="/banner.jpeg" class="w-full h-full" alt=""> -->
+        <h1 class="text-white text-4xl font-bold absolute top-[50%]">Welcome to my Website</h1>
+        <!-- <p class="text-white text-2xl">ppppppppppppp</p> -->
+        <button class="absolute right-4 bottom-4 bg-gray-500 hover:bg-orange-600 duration-300 animate-bounce transform w-[3rem] h-[3rem] flex justify-center items-center  fill-white rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+        </button>
+    </div>
+    <div class="flex p-5  justify-around items-center">
+        <div class="w-[300px] h-auto p-5 rounded border border-gray-300 relative">
+            <div class="w-full bg-gray-300 h-60"></div>
+            <h1>Title</h1>
+            <p>content</p>
+        
     
+            <button class="absolute -top-2 -right-2 bg-teal-400 rounded-full w-5 h-5 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+            </button>
+        </div>
+        <div class="w-[300px] h-auto p-5 rounded border border-gray-300 relative">
+            <div class="w-full bg-gray-300 h-60"></div>
+            <h1>Title</h1>
+            <p>content</p>
+        
+    
+            <button class="absolute -top-2 -right-2 bg-teal-400 rounded-full w-5 h-5 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+            </button>
+        </div>
+        <div class="w-[300px] h-auto p-5 rounded border border-gray-300 relative">
+            <div class="w-full bg-gray-300 h-60"></div>
+            <h1>Title</h1>
+            <p>content</p>
+        
+    
+            <button class="absolute -top-2 -right-2 bg-teal-400 rounded-full w-5 h-5 flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+            </button>
+        </div>
+    </div>
 </body>
-<style>
-
-</style>
 </html>
