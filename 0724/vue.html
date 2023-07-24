@@ -5,32 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>Document</title>
+    <title>Vue</title>
 </head>
 <body id="app">
-    <h1>{{ message }}</h1>
-    <div v-for="(i, idx) in list" :key="idx">{{ i }}</div>
-    <button @click="click()">click</button>
-    <div v-if="bool">123</div>
+    <ul class="space-y-3 p-16">
+      <li v-for="item in news" :key="item.id" class="bg-gradient-to-br from-pink-500 to-rose-500 text-white flex flex-col duration-200 gap-4">
+        <div class="flex justify-between items-center px-2">
+            <div class="flex items-center gap-4 p-2 relative">
+              <div class="bg-white w-10 h-10 font-bold text-xl flex justify-center items-center text-pink-500">{{item.id}}</div>
+              <h1 class="text-lg font-bold">{{item.title}}</h1> 
+            </div>
+            
+            <button @click="choose(item)" class="bg-white text-pink-500 w-20 py-2 rounded-md">Click</button>
+        </div>
+       
+
+        <div v-show="item.show" class="w-full bg-white border border-pink-500 text-gray-500 p-5">
+          {{item.content}}
+        </div>
+
+      </li>
+    </ul>
 </body>
 
 <script>
-    const { createApp, ref, reactive } = Vue
-  
-    createApp({
-      setup() {
-        const message = ref('Hello vue!');
-        const bool = ref(false);
-        const list = reactive(['Kai','Mike','Wayne']);
+  const { createApp, ref, reactive } = Vue
+  createApp({
+    setup() {
+      const news = reactive([
+        { title: '星巴克', id: 1, show:false, content:'123'},
+        { title: '清心', id: 2, show:false, content:'123'},
+        { title: '711', id: 3, show:false, content:'123'},
+        { title: '50藍', id: 4, show:false, content:'123'},
+        { title: '全家', id: 5, show:false, content:'123'},
+        { title: '三分春色', id: 6, show:false, content:'123'},
+      ])
 
-        function click() {
-            bool.value = !bool.value;
-        }
-
-        return {
-          message, list, bool, click,
-        }
+      function choose(item) {
+        item.show = !item.show;
       }
-    }).mount('#app')
+
+      return {
+        news, choose
+      }
+    }
+  }).mount('#app')
 </script>
 </html>
