@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <!-- animate -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    
+    <!-- wow -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> 
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <title>0731</title>
+
+     <!-- wow -->
+    <script>
+        new WOW().init();
+    </script>
+
+    <style>
+       .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-pagination {
+            width: auto !important;
+            left: auto !important;
+            right: 10px !important;
+        }
+
+        .swiper-pagination-bullet {
+            background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='13.238px' height='10.4px' viewBox='0 0 13.238 10.4' enable-background='new 0 0 13.238 10.4' xml:space='preserve'%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M12.903,2.048c-1.146-2.284-4.888-2.724-8.358-0.982C1.074,2.807-0.81,6.069,0.335,8.353 c1.146,2.284,4.888,2.723,8.358,0.983C12.164,7.594,14.049,4.332,12.903,2.048z M4.463,9.245c-1.495,0-2.651-0.527-3.095-1.41 C0.864,6.829,1.366,5.68,1.709,5.084C2.393,3.9,3.584,2.84,5.063,2.099c1.229-0.617,2.512-0.942,3.712-0.942 c1.495,0,2.652,0.527,3.095,1.41c0.505,1.006,0.003,2.155-0.341,2.751C10.845,6.5,9.654,7.561,8.175,8.302 C6.947,8.919,5.664,9.245,4.463,9.245L4.463,9.245z'/%3E%3C/g%3E%3C/svg%3E%0A");
+            /* width: 20px;
+            height: 16px; */
+            border-radius: 100px;
+            transition: width 0.3s;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 20px;
+            height: 16px;
+            background: #0ea5e9;
+        }
+    </style>
+</head>
+<body id="app">
+    <nav class="flex items-center text-xl text-white justify-between px-5 py-2 h-20 bg-[#000]">
+        <h1 class="text-xl">{{ message }}</h1>
+        <ul class="flex items-center gap-4">
+            <li class="relative group">About
+                <ul class="absolute group-hover:block hidden bg-white text-zinc-900 w-full text-center">
+                    <li>123</li>
+                    <li>123</li>
+                </ul>
+            </li>
+            <li @click="click()">News</li>
+        </ul>
+    </nav>
+   
+    <div v-show="show" class="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+        <div v-for="i in games" :key="i" class="col-span-1 text-center animate__animated animate__rubberBand">
+            <h1 class="text-xl font-bold">{{i}}</h1>
+            <div class="w-full h-40 bg-gray-200"></div>
+        </div>
+    </div>
+
+    <h1 class="text-2xl font-bold my-4 text-center">最新消息</h1>
+    <div class="w-full flex justify-center items-center bg-white p-4 relative ">
+        <img src="/banner.jpeg" class="w-full lg:w-2/3 h-full" alt="">
+        <ul class="absolute lg:static w-[80%] p-4 lg:p-0 lg:w-1/2 space-y-2 lg:space-y-4 lg:-translate-x-60">
+            <li class="py-2 lg:py-4 bg-white px-4 shadow shadow-gray-400">New</li>
+            <li class="py-2 lg:py-4 bg-white px-4 shadow shadow-gray-400">New</li>
+            <li class="py-2 lg:py-4 bg-white px-4 shadow shadow-gray-400">New</li>
+            <li class="py-2 lg:py-4 bg-white px-4 shadow shadow-gray-400">New</li>
+            <li class="py-2 lg:py-4 bg-white px-4 shadow shadow-gray-400">New</li>
+            <li class="py-2 lg:py-4 bg-white px-4 shadow shadow-gray-400">New</li>
+        </ul>
+    </div>
+
+    <div class="w-full flex justify-center my-20 wow animate__animated animate__slideInRight">
+        <div class="w-[80%] p-4 bg-sky-500">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper h-80">
+                  <div class="swiper-slide bg-gray-300">Slide 1</div>
+                  <div class="swiper-slide bg-gray-300">Slide 2</div>
+                  <div class="swiper-slide bg-gray-300">Slide 3</div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+        </div>
+    </div>
+
+   <!-- <div class="w-full h-80">
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/_NbJXsts9K8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </div> -->
+   <div class="w-full flex justify-center items-center">
+    <div class="w-1/2">
+        <div class="aspect-w-16 aspect-h-9">
+            <iframe class="" width="560" height="315" src="https://www.youtube.com/embed/H0Yirlo6WSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="w-1/2">
+        <div class="aspect-w-16 aspect-h-9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/l_iXA_KZSEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+   </div>
+   
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        });
+    </script>
+</body>
+
+<!-- vue -->
+<script>
+    const { createApp, ref, reactive } = Vue
+    createApp({
+      setup() {
+        const message = ref('Hello, Vue');
+        const show = ref(true);
+        const games = reactive([
+            '全民打棒球','美女野球拳','跑跑卡丁車','傳說對決'
+        ])
+
+        function click() {
+            show.value = !show.value;
+        }
+
+        return {
+          message, show, click, games
+        }
+      }
+    }).mount('#app')
+</script>
+</html>
